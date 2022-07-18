@@ -1,0 +1,135 @@
+section.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column-reverse;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+section.container .form-container {
+  position: relative;
+}
+section.container .form-container::before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(#1f332c, #3c8069);
+  border-radius: 50%;
+  transform: translate(0%, 0%);
+  left: -20%;
+  top: -10%;
+}
+
+section.container .form-container::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(to right, #98f576, #85f15ee5);
+  border-radius: 50%;
+  transform: translate(0%, 0%);
+  right: -20%;
+  bottom: -10%;
+}
+
+section.container form * {
+  letter-spacing: 0.5px;
+  color: #333;
+}
+
+section.container form {
+  position: relative;
+  height: 550px;
+  z-index: 1;
+  width: 450px;
+  max-width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 2px solid #ffffff1a;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+  padding: 50px 35px;
+}
+
+section.container form h3 {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+}
+
+section.container .form-group {
+  margin: 2rem 0;
+}
+
+section.container .form-group input,
+select {
+  height: 40px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  outline: none;
+  width: 100%;
+  background-color: #ffffff12;
+  border-radius: 3px;
+  padding: 0 10px;
+  font-size: 14px;
+  font-weight: 300;
+  margin: 0.5rem 0;
+}
+
+section.container button {
+  margin-top: 2rem;
+  width: 100%;
+  background-color: #1f332c;
+  color: #fff;
+  padding: 15px 0;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+section.container button:hover {
+  background-color: #3c8069;
+}
+
+.PaymentSuccesful-img {
+  width: 50%;
+  display: flex;
+  margin: 0 auto;
+}
+
+.payment-description {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 2rem 0;
+}
+
+.transaction {
+  display: flex;
+  flex-direction: column;
+}
+
+.transaction-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 2rem;
+  /* position: relative; */
+}
+
+p span.green {
+  color: #1f3;
+}
+
+@media (max-width: 991.98px) {
+  section.container .form-container::before {
+    display: none;
+  }
+  section.container .form-container::after {
+    display: none;
+  }
+}
