@@ -1,0 +1,122 @@
+* {
+  text-transform: capitalize;
+}
+
+.coming-soon-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px 7%;
+  min-height: 100vh;
+  gap: 15px;
+  padding-bottom: 80px;
+}
+
+.coming-soon-container .content,
+.coming-soon-container .image {
+  flex: 1 1 400px;
+}
+
+.coming-soon-container .image img {
+  width: 100%;
+  animation: slideIn 1s ease 0s 1 normal forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(150px);
+    -webkit-transform: translateX(150px);
+    -moz-transform: translateX(150px);
+    -ms-transform: translateX(150px);
+    -o-transform: translateX(150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+  }
+}
+
+.coming-soon-container .content .title {
+  font-size: 45px;
+  text-transform: uppercase;
+  color: #98f576;
+}
+
+.coming-soon-container .content p {
+  padding: 5px 0;
+}
+
+.coming-soon-container .content .count-down {
+  display: flex;
+  gap: 15px;
+  padding: 10px 0;
+}
+
+.coming-soon-container .content .count-down .box {
+  padding: 5px;
+  background: #fff;
+  color: #666;
+  border: 1px solid #3333;
+  text-align: center;
+  flex: 1 1 20px;
+}
+
+.coming-soon-container .content .count-down .box h3 {
+  font-size: 50px;
+  color: #1e1e1e;
+}
+
+.coming-soon-container .content .count-down .box span {
+  color: #1f332c;
+  font-size: 20px;
+}
+
+.coming-soon-container .content .btn {
+  display: inline-block;
+  padding: 8px 50px;
+  margin: 10px 0;
+  font-size: 17px;
+  background: #98f576;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+
+.coming-soon-container .content .btn:hover {
+  letter-spacing: 2px;
+}
+
+@media (max-width: 500px) {
+  .coming-soon-container {
+    padding: 20px;
+  }
+
+  .coming-soon-container .content {
+    text-align: center;
+  }
+
+  .coming-soon-container .content .title {
+    font-size: 30px;
+  }
+
+  .coming-soon-container .content p {
+    font-size: 14px;
+  }
+
+  .coming-soon-container .content .count-down {
+    gap: 5px;
+  }
+
+  .coming-soon-container .content .title .box h3 {
+    font-size: 20px;
+  }
+
+  .coming-soon-container .content .count-down .box span {
+    font-size: 15px;
+  }
+}

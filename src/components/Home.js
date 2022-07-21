@@ -11,7 +11,7 @@ const Home = () => {
       <header className="App-header">
         <div className="left-header">
           <h2 className="logo">
-            Pay<span className="logo-span">Zone</span>
+            PAY<span className="logo-span">ZONE</span>
           </h2>
         </div>
         <div className="middle-header">

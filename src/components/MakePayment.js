@@ -64,7 +64,7 @@ const MakePayment = () => {
               id="amount"
               value={data.amount}
               type="number"
-              placeholder="Amount"
+              placeholder="Amount in XAF"
             />
           </div>
 

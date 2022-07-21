@@ -1,8 +1,8 @@
 {
   "InitiatePayment": {
-    "TransactionId": 98376611.33739604,
+    "TransactionId": 29643240.687142875,
     "receiver": "CK Molinga",
-    "amount": "600",
+    "amount": "6000",
     "payment_method": "MTN Mobile Money",
     "status": "Pending",
     "date": "7/18/2022"

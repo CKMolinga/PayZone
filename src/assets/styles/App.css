@@ -54,6 +54,7 @@ ul.menu {
 
 ul.menu li {
   margin: 0 1rem;
+  text-transform: uppercase;
 }
 
 ul.menu a {
@@ -244,7 +245,7 @@ h2.underlined-header {
     -moz-transform: translateX(0);
     -ms-transform: translateX(0);
     -o-transform: translateX(0);
-}
+  }
 }
 
 @media (max-width: 811px) {

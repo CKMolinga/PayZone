@@ -1,4 +1,5 @@
 import "./assets/styles/App.css";
+import "./assets/styles/coming-soon.css";
 import Home from "./components/Home";
 import ComingSoon from "./components/coming-soon";
 import MakePayment from "./components/MakePayment";
@@ -14,10 +15,10 @@ function App() {
         <div className="container">
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/coming-soon" component={ComingSoon} />
-            <Route path="/make-payment" component={MakePayment} />
-            <Route path="/confirm-payment" component={ConfirmPayment} />
-            <Route path="/success" component={SuccessPage} />
+            <Route exact path="/coming-soon" component={ComingSoon} />
+            <Route exact path="/make-payment" component={MakePayment} />
+            <Route exact path="/confirm-payment" component={ConfirmPayment} />
+            <Route exact path="/success" component={SuccessPage} />
             <Route path="*">
               <NotFoundPage />
             </Route>
