@@ -37,13 +37,13 @@ const Home = () => {
       <main className="main-section">
         <section className="left-section">
           <div className="hero-section">
-            <h2>Pay Anyone,</h2>
-            <h2 className="underlined-header">Anywhere.</h2>
+            <h2>Make Payments,</h2>
+            <h2 className="underlined-header">A Breeze.</h2>
           </div>
           <div className="about">
             <p>
-              Make payment smooth as breeze. Pay family, friends and bills for
-              less-at home and abroad.
+              Join thousands of businesses - from savy start-ups to expanding
+              enterprise, start collecting payments with powerful technology.
             </p>
           </div>
           <div className="get-started">
