@@ -84,6 +84,7 @@ ul.menu a:hover {
   font-weight: normal;
   transition: all 0.3s ease-in-out;
   margin: 0 1rem;
+  text-transform: uppercase;
 }
 .right-header a:hover {
   color: #98f576;
@@ -219,7 +220,7 @@ h2.underlined-header {
 }
 
 .partners img {
-  max-width: 150px;
+  max-width: 120px;
   height: auto;
 }
 
@@ -261,6 +262,12 @@ h2.underlined-header {
   }
   .right-section {
     display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  h2.hero-heading {
+    font-size: 2.5rem;
   }
 }
 

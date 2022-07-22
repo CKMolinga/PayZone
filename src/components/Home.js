@@ -37,8 +37,8 @@ const Home = () => {
       <main className="main-section">
         <section className="left-section">
           <div className="hero-section">
-            <h2>Make Payments,</h2>
-            <h2 className="underlined-header">A Breeze.</h2>
+            <h2 className="hero-heading">Make Payments,</h2>
+            <h2 className="hero-heading underlined-header">A Breeze.</h2>
           </div>
           <div className="about">
             <p>
