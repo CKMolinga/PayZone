@@ -250,6 +250,20 @@ h2.underlined-header {
   }
 }
 
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.4;
+}
+
 @media (max-width: 811px) {
   .middle-header {
     display: none;

@@ -39,7 +39,7 @@ const ConfirmPayment = () => {
           <h3 className="form-title">Pay</h3>
 
           <div className="form-group">
-            <label for="username">Phone Number</label>
+            <label>Phone Number</label>
             <input
               onChange={(e) => ValidatePhoneNumber(e)}
               type="text"

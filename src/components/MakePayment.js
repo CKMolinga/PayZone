@@ -3,42 +3,55 @@ import axios from "axios";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
+import auth from "../auth";
+import { initiatePayment } from "../api/axiosCall";
+import Spinner from "./Spinner";
+
 // import { Link } from "react-router-dom";
 
 const MakePayment = () => {
-  const url = "http://localhost:3000/InitiatePayment";
-  const history = useHistory();
-  const [data, setData] = useState({
-    TransactionId: Math.random() * (100000000 - 1) + 1,
-    receiver: "",
-    amount: "",
-    payment_method: "",
-    status: "Pending",
-    date: new Date().toLocaleDateString(),
-  });
+  const [total_amount, setTotalAmount] = useState(0);
+  const [currency, setCurrency] = useState("");
+  const [userName, setUserName] = useState("");
+  const [isloading, setIsLoading] = useState(false);
+  const history = useHistory()
+  // const [return_url, setReturnUrl] = useState('');
 
-  function submit(e) {
+  const submit = async (e) => {
     e.preventDefault();
-    axios
-      .post(url, {
-        TransactionId: data.TransactionId,
-        receiver: data.receiver,
-        amount: data.amount,
-        payment_method: data.payment_method,
-        status: data.status,
-        date: data.date,
-      })
-      .then((res) => {
-        console.log(res);
-        history.push("/confirm-payment");
-      });
-  }
+    const data = {
+      total_amount,
+      currency,
+      return_url: "localhost",
+      name: userName,
+    };
+    setIsLoading(true);
+    try {
+      const response = await initiatePayment.post(
+        "/transaction/initiate",
+        data
+      );
+      console.log(response.data);
+      setIsLoading(false);
 
-  function handle(e) {
-    const newdata = { ...data };
-    newdata[e.target.id] = e.target.value;
-    setData(newdata);
-  }
+      //* Save the transaction id to localstorage
+      const { transaction_id } = response.data;
+      localStorage.setItem("transaction_id", transaction_id);
+
+      //* Move to confirm page
+      history.push("/confirm-payment");
+  
+    } catch (error) {
+      console.log(error);
+      setIsLoading(false);
+    }
+  };
+
+  // function handle(e) {
+  //   const newdata = { ...data };
+  //   newdata[e.target.id] = e.target.value;
+  //   setData(newdata);
+  // }
 
   return (
     <section className="container">
@@ -47,22 +60,22 @@ const MakePayment = () => {
           <h3 className="form-title">Pay</h3>
 
           <div className="form-group">
-            <label for="username">Recipient</label>
+            <label>Name</label>
             <input
-              onChange={(e) => handle(e)}
+              onChange={(e) => setUserName(e.target.value)}
               id="receiver"
-              value={data.receiver}
+              value={userName}
               type="text"
               placeholder="Receivers email or PayZone ID"
             />
           </div>
 
           <div className="form-group">
-            <label for="username">Amount</label>
+            <label>Amount</label>
             <input
-              onChange={(e) => handle(e)}
+              onChange={(e) => setTotalAmount(e.target.value)}
               id="amount"
-              value={data.amount}
+              value={total_amount}
               type="number"
               placeholder="Amount in XAF"
             />
@@ -70,19 +83,20 @@ const MakePayment = () => {
 
           <div className="form-group payment-providers">
             <select
-              onChange={(e) => handle(e)}
+              onChange={(e) => setCurrency(e.target.value)}
               id="payment_method"
-              value={data.payment_method}
+              value={currency}
             >
               <option value="" disabled>
                 Select a payment provider
               </option>
-              <option value="MTN Mobile Money">MTN Mobile Money</option>
-              <option value="Orange Money">Orange Money</option>
-              <option value="Western Union">Western Union</option>
+              <option value="XAF">MTN Mobile Money</option>
+              <option value="USD">Orange Money</option>
             </select>
           </div>
           <button>Next</button>
+
+          {isloading && <Spinner />}
         </form>
       </div>
     </section>

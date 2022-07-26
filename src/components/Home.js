@@ -3,6 +3,8 @@ import Orange from "../assets/Orange_Money.png";
 import WU from "../assets/Western-Union.png";
 import illustration from "../assets/illustration.png";
 
+import { ProtectedRoute } from "../protectedRoute";
+
 import { Link } from "react-router-dom";
 
 const Home = () => {
