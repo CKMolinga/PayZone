@@ -58,7 +58,6 @@ const Home = () => {
             <div className="partner-logos">
               <img src={Orange} className="partner-logo" alt="logo" />
               <img src={MTN} className="partner-logo" alt="logo" />
-              <img src={WU} className="partner-logo" alt="logo" />
             </div>
           </div>
         </section>

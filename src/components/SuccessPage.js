@@ -1,5 +1,4 @@
 import "../assets/styles/MakePayment.css";
-import "../assets/styles/MakePayment.css";
 import { Link } from "react-router-dom";
 
 import axios from "axios";

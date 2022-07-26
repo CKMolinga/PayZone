@@ -4,17 +4,17 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import auth from "../auth";
-import { initiatePayment } from "../api/axiosCall";
+import { processPayment } from "../api/axiosCall";
 import Spinner from "./Spinner";
 
 // import { Link } from "react-router-dom";
 
 const MakePayment = () => {
-  const [total_amount, setTotalAmount] = useState(0);
+  const [total_amount, setTotalAmount] = useState();
   const [currency, setCurrency] = useState("");
   const [userName, setUserName] = useState("");
   const [isloading, setIsLoading] = useState(false);
-  const history = useHistory()
+  const history = useHistory();
   // const [return_url, setReturnUrl] = useState('');
 
   const submit = async (e) => {
@@ -27,20 +27,19 @@ const MakePayment = () => {
     };
     setIsLoading(true);
     try {
-      const response = await initiatePayment.post(
-        "/transaction/initiate",
-        data
-      );
+      const response = await processPayment.post("/transaction/initiate", data);
       console.log(response.data);
       setIsLoading(false);
 
       //* Save the transaction id to localstorage
       const { transaction_id } = response.data;
       localStorage.setItem("transaction_id", transaction_id);
+      localStorage.setItem("total_amount", total_amount);
+      localStorage.setItem("currency", currency);
+      localStorage.setItem("userName", userName);
 
       //* Move to confirm page
-      history.push("/confirm-payment");
-  
+      history.push("/get-psp");
     } catch (error) {
       console.log(error);
       setIsLoading(false);
@@ -57,7 +56,7 @@ const MakePayment = () => {
     <section className="container">
       <div className="form-container">
         <form onSubmit={(e) => submit(e)}>
-          <h3 className="form-title">Pay</h3>
+          <h3 className="form-title">Payment Details</h3>
 
           <div className="form-group">
             <label>Name</label>
@@ -88,10 +87,10 @@ const MakePayment = () => {
               value={currency}
             >
               <option value="" disabled>
-                Select a payment provider
+                Select Currency
               </option>
-              <option value="XAF">MTN Mobile Money</option>
-              <option value="USD">Orange Money</option>
+              <option value="XAF">XAF</option>
+              <option value="USD">USD</option>
             </select>
           </div>
           <button>Next</button>

@@ -254,14 +254,14 @@ h2.underlined-header {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  width: 100%;
-  z-index: 9999;
+  height: 650px;
+  width: 450px;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -2px;
+  left: -2px;
   background: #000;
   opacity: 0.4;
+  border-radius: 10px;
 }
 
 @media (max-width: 811px) {

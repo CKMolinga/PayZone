@@ -5,10 +5,13 @@ import ComingSoon from "./components/coming-soon";
 import MakePayment from "./components/MakePayment";
 import ConfirmPayment from "./components/ConfirmPayment";
 import SuccessPage from "./components/SuccessPage";
+import GetPsps from "./components/GetPsps";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import NotFoundPage from "./components/404";
+import NotFoundPage from "./components/404"
+
 
 function App() {
+
   return (
     <Router>
       <div className="App">
@@ -19,6 +22,7 @@ function App() {
             <Route exact path="/make-payment" component={MakePayment} />
             <Route exact path="/confirm-payment" component={ConfirmPayment} />
             <Route exact path="/success" component={SuccessPage} />
+            <Route exact path="/get-psp" component={GetPsps} />
             <Route path="*">
               <NotFoundPage />
             </Route>
