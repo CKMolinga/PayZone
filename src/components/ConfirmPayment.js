@@ -38,7 +38,7 @@ const ConfirmPayment = () => {
       );
       console.log(response.data);
       setIsLoading(false);
-      history.push("/success");
+      history.push("/update-status");
     } catch (error) {
       console.log(error);
       setIsLoading(false);
