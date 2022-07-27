@@ -7,11 +7,10 @@ import ConfirmPayment from "./components/ConfirmPayment";
 import SuccessPage from "./components/SuccessPage";
 import GetPsps from "./components/GetPsps";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import NotFoundPage from "./components/404"
-
+import NotFoundPage from "./components/404";
+import UpdateStatus from "./components/UpdateStatus";
 
 function App() {
-
   return (
     <Router>
       <div className="App">
@@ -23,6 +22,7 @@ function App() {
             <Route exact path="/confirm-payment" component={ConfirmPayment} />
             <Route exact path="/success" component={SuccessPage} />
             <Route exact path="/get-psp" component={GetPsps} />
+            <Route exact path="/update-status" component={UpdateStatus} />
             <Route path="*">
               <NotFoundPage />
             </Route>

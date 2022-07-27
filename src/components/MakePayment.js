@@ -1,9 +1,8 @@
 import "../assets/styles/MakePayment.css";
-import axios from "axios";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-import auth from "../auth";
+// import auth from "../auth";
 import { processPayment } from "../api/axiosCall";
 import Spinner from "./Spinner";
 
