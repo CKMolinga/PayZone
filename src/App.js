@@ -9,6 +9,7 @@ import GetPsps from "./components/GetPsps";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NotFoundPage from "./components/404";
 import UpdateStatus from "./components/UpdateStatus";
+import MaintainancePage from "./components/maintenance";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route exact path="/success" component={SuccessPage} />
             <Route exact path="/get-psp" component={GetPsps} />
             <Route exact path="/update-status" component={UpdateStatus} />
+            <Route exact path="/maintainance" component={MaintainancePage} />
             <Route path="*">
               <NotFoundPage />
             </Route>
