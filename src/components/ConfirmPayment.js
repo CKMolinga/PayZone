@@ -42,6 +42,10 @@ const ConfirmPayment = () => {
     } catch (error) {
       console.log(error);
       setIsLoading(false);
+
+      if (error.code === "ERR_NETWORK") {
+        history.push("/maintainance");
+      }
     }
   };
 
