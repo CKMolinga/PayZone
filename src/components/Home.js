@@ -49,7 +49,8 @@ const Home = () => {
           </div>
           <div className="get-started">
             <Link to="/make-payment" span-parent>
-              Send Money <span class="material-icons arrow">arrow_forward</span>
+              Make Payment{" "}
+              <span class="material-icons arrow">arrow_forward</span>
             </Link>
           </div>
           <div className="partners">
