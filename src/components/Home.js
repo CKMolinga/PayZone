@@ -29,7 +29,7 @@ const Home = () => {
           </ul>
         </div>
         <div className="right-header">
-          <Link to="/coming-soon">Login</Link>
+          <Link to="/login">Login</Link>
           <Link to="/coming-soon" className="highlighted">
             Sign Up
           </Link>
