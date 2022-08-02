@@ -1,7 +1,12 @@
 import "../assets/styles/MakePayment.css";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
+import AuthContext from "../context/AuthProvider";
+import { Link } from "react-router-dom";
+
+import axios from "axios";
 
 const Login = () => {
+  const { setAuth } = useContext(AuthContext);
   const userRef = useRef();
   const errRef = useRef();
 
@@ -11,16 +16,21 @@ const Login = () => {
   const [success, setSuccess] = useState(false);
 
   useEffect(() => {
-    // userRef.current.focus();
+    // userRef.current.focus();c
   }, []);
 
   useEffect(() => {
     setErrMsg("");
   }, [user, pwd]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  };
+
   return (
     <section className="container">
       <div className="form-container">
-        <form>
+        <form onSubmit={handleSubmit}>
           <h3 className="form-title">Login to PayZone</h3>
 
           <p
@@ -61,7 +71,7 @@ const Login = () => {
             Don't have an account yet?{" "}
             <span>
               {" "}
-              <a href="#">Sign Up</a>{" "}
+              <Link to="/coming-soon">Sign Up</Link>{" "}
             </span>{" "}
           </p>
         </form>
