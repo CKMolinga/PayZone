@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import { processPayment } from "../api/axiosCall";
 import Spinner from "./Spinner";
 
+import { Link } from "react-router-dom";
 // import { Link } from "react-router-dom";
 
 const MakePayment = () => {
@@ -59,6 +60,9 @@ const MakePayment = () => {
     <section className="container">
       <div className="form-container">
         <form onSubmit={(e) => submit(e)}>
+          <Link to="/" span-parent>
+            <span class="material-icons arrow">arrow_backward</span>
+          </Link>
           <h3 className="form-title">Payment Details</h3>
 
           <div className="form-group">

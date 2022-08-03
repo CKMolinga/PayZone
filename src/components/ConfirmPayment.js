@@ -5,6 +5,8 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
 
+import { Link } from "react-router-dom";
+
 // import { Link } from "react-router-dom"z;
 
 const ConfirmPayment = () => {
@@ -75,6 +77,9 @@ const ConfirmPayment = () => {
     <section className="container">
       <div className="form-container">
         <form onSubmit={submit}>
+          <Link to="/make-payment" span-parent>
+            <span class="material-icons arrow">arrow_backward</span>
+          </Link>
           <h3 className="form-title">Confirm Payment</h3>
 
           <div className="form-group">

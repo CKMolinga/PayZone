@@ -4,6 +4,8 @@ import { useHistory } from "react-router-dom";
 import { pspResponse } from "../pspResponse";
 import "../assets/styles/GetPsp.css";
 
+import { Link } from "react-router-dom";
+
 const GetPsps = () => {
   const [gateway, setGateway] = useState("");
 
@@ -25,6 +27,9 @@ const GetPsps = () => {
     <section className="container getpsp-container">
       <div className="form-container get-psp-form-container">
         <form onSubmit={(e) => submit(e)}>
+          <Link to="/make-payment" span-parent>
+            <span class="material-icons arrow">arrow_backward</span>
+          </Link>
           <h3 className="form-title">Payment Method</h3>
 
           <div className="">
